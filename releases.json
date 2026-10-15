@@ -1,7 +1,10 @@
 {
   "releases": {
     "product": null,
-    "prototype": null,
+    "prototype": {
+      "updatedAt": "2026-10-15T14:52:43Z",
+      "size": 111070049
+    },
     "dev": {
       "updatedAt": "2026-10-15T13:19:30Z",
       "size": 111070041
