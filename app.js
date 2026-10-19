@@ -5,6 +5,7 @@ async function loadReleases() {
     const data = await response.json();
     for (const card of document.querySelectorAll('[data-slug]')) {
       const release = data.releases[card.dataset.slug];
+      card.querySelector('.release-version').textContent = release?.title || 'Versão não informada';
       const date = release?.updatedAt ? new Date(release.updatedAt) : null;
       card.querySelector('.updated').textContent = date && !Number.isNaN(date.getTime())
         ? `${new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Manaus', dateStyle: 'short' }).format(date)} às ${new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Manaus', timeStyle: 'short' }).format(date)}`
@@ -13,6 +14,7 @@ async function loadReleases() {
       if (release?.size) card.querySelector('.size').textContent = `${(release.size / 1024 / 1024).toLocaleString('pt-BR', { maximumFractionDigits: 1 })} MB · APK`;
     }
   } catch {
+    for (const field of document.querySelectorAll('.release-version')) field.textContent = 'Versão indisponível';
     for (const field of document.querySelectorAll('.updated')) field.textContent = 'Não foi possível consultar';
     document.querySelector('#status').textContent = 'As datas estão indisponíveis agora. Você pode consultar a última atualização em “Detalhes da versão”.';
   }
