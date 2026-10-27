@@ -2,9 +2,9 @@
   "releases": {
     "product": null,
     "prototype": {
-      "title": "Lumi Protótipo 0.0.1-rc.6601 · build 6601",
-      "updatedAt": "2026-10-26T22:20:47Z",
-      "size": 113246685
+      "title": "Lumi Protótipo 0.0.23-rc.7201 · build 7201",
+      "updatedAt": "2026-10-27T18:13:42Z",
+      "size": 113247625
     },
     "dev": {
       "title": "Lumi Dev 0.0.23-dev.7101 · build 7101",
